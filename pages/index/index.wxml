@@ -3,25 +3,23 @@
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
     <view class="input-section">
-      <textarea 
-        class="input-box" 
-        placeholder="请输入您的问题..." 
-        bindinput="onInput"
+      <input 
+        class="text-input" 
+        placeholder="请输入文字" 
+        bindinput="handleInput"
         value="{{inputText}}"
-      ></textarea>
-      
+      />
       <button 
         class="submit-btn" 
-        bindtap="handleSubmit" 
-        disabled="{{loading}}"
+        bindtap="handleSubmit"
       >
-        <text wx:if="{{!loading}}">发送</text>
-        <view wx:else class="loading-icon"></view>
+        生成图片
       </button>
     </view>
-
-    <view class="response-section" wx:if="{{response}}">
-      <text class="response-text">{{response}}</text>
+    
+    <!-- 如果有返回的图片则显示 -->
+    <view class="image-section" wx:if="{{imageUrl}}">
+      <image class="result-image" src="{{imageUrl}}" mode="widthFix"></image>
     </view>
   </view>
 </scroll-view>
