@@ -1,0 +1,70 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.container {
+  padding: 20px;
+}
+
+.input-section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.submit-btn {
+  width: 100% !important;
+  background: #07c160;
+  color: white;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn[disabled] {
+  background: #9fd5b6 !important;
+  color: #ffffff !important;
+}
+
+.loading-icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: rotate 0.8s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.response-section {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.response-text {
+  word-break: break-all;
+  line-height: 1.6;
+}

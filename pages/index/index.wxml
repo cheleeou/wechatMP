@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="input-section">
+      <textarea 
+        class="input-box" 
+        placeholder="请输入您的问题..." 
+        bindinput="onInput"
+        value="{{inputText}}"
+      ></textarea>
+      
+      <button 
+        class="submit-btn" 
+        bindtap="handleSubmit" 
+        disabled="{{loading}}"
+      >
+        <text wx:if="{{!loading}}">发送</text>
+        <view wx:else class="loading-icon"></view>
+      </button>
+    </view>
+
+    <view class="response-section" wx:if="{{response}}">
+      <text class="response-text">{{response}}</text>
+    </view>
+  </view>
+</scroll-view>
